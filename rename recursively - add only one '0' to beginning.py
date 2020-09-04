@@ -2,7 +2,7 @@
 # the music players would sort the files into an order like: 1.mp3, 10.mp3, 11.mp3 ...
 # 19.mp3, 2.mp3, 20.mp3, 21.mp3, ...
 
-# So, a single '0' should be added before the single digit file names, which is
+# So, a single '0' should be added before the single digit number file names, which is
 # what this python script is for.
 
 # __author__ = Puyu Liu
@@ -15,17 +15,17 @@ import sys
 import errno
 
 dir = os.path.dirname(os.path.realpath(sys.argv[0])) 	#get the directory to work on
-print('sys.argv: ')
+print("\n" + 'sys.argv: ')
 print(sys.argv)
 
 for subdir, dirs, files in os.walk(dir):
  #print("root: " + root)
- print("subdir: " + subdir)
+ print("\n" + "subdir: " + subdir)
  print("dirs: ")
  print('[%s]' % ', '.join(map(str, dirs)))
  
  for fn in files:
-  print('fn.split("."): ')
+  print("\n" + 'fn.split("."): ')
   print(fn.split("."))
   if fn.find('.mp3') > 0 and os.path.splitext(fn)[0][:1] != "0" and float(fn.split(".")[0]) < 10:
    print("fn[0]: " + fn[0])
@@ -42,4 +42,4 @@ for subdir, dirs, files in os.walk(dir):
     os.rename(fPath, newfPath) 							#rename your file
    except FileNotFoundError:
     print('file not found.')
-    continue
+    continue 

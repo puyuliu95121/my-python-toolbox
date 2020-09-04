@@ -1,3 +1,15 @@
+# When you donwload lots of mp3 files that are named 1.mp3, 2.mp3 ... 9.mp3, 10.mp3
+# the music players would sort the files into an order like: 1.mp3, 10.mp3, 11.mp3 ...
+# 19.mp3, 2.mp3, 20.mp3, 21.mp3, ...
+
+# So, a single '0' should be added before the single digit file names, which is
+# what this python script is for.
+
+# __author__ = Puyu Liu
+# __copyright__ = "Copyright (C) 2020 Puyu Liu"
+# __version__ = "1.0"
+# __date__ = 09-04-2020
+
 import os
 import sys
 import errno
